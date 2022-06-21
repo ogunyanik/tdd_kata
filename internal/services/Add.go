@@ -6,6 +6,9 @@ import (
 )
 
 func Add(numbers string) (int, error) {
+
+	numbers = strings.Replace(numbers, "\n", ",", -1)
+
 	numberArray := strings.Split(numbers, ",")
 
 	result := 0
