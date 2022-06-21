@@ -15,6 +15,6 @@ func Test_Add(t *testing.T) {
 	assert.Equal(t, 3, case1)
 	assert.Equal(t, 6, case2)
 	assert.Equal(t, 0, case3)
-	assert.Equal(t, "Not Valid", err_case3)
+	assert.Equal(t, "not valid", err_case3.Error())
 
 }
