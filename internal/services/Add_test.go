@@ -1,6 +1,7 @@
 package services
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -8,11 +9,12 @@ import (
 
 func Test_Add(t *testing.T) {
 
-	result, err := Add("1,2")
+	result, err := Add("1\n2,3")
 	if err != nil {
 		t.Fail()
 	}
 
-	assert.Equal(t, result, 3)
+	fmt.Println(result)
+	assert.Equal(t, result, 6)
 
 }
