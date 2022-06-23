@@ -40,11 +40,12 @@ func Add(numbers string) (int, error) {
 
 		}
 
-		if i > 0 {
+		if number > 0 {
 			result += number
-		}
+		} else {
+			negativeNumbers = append(negativeNumbers, numberArray[i])
 
-		negativeNumbers = append(negativeNumbers, numberArray[i])
+		}
 
 	}
 
