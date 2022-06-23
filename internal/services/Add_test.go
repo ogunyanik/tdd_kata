@@ -15,6 +15,7 @@ func Test_Add(t *testing.T) {
 	_, err5 := Add("-1,2")
 	_, err5_v2 := Add("-1,-2")
 	case6, _ := Add("1001,2")
+	case7, _ := Add("")
 
 	assert.Equal(t, 3, case1)
 	assert.Equal(t, 6, case2)
@@ -24,5 +25,6 @@ func Test_Add(t *testing.T) {
 	assert.Equal(t, "negatives not allowed", err5.Error())
 	assert.Equal(t, "negatives not allowed!! negative numbers: (-1,-2)", err5_v2.Error())
 	assert.Equal(t, 2, case6)
+	assert.Equal(t, 0, case7)
 
 }
