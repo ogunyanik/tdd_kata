@@ -31,17 +31,30 @@ func Add(numbers string) (int, error) {
 	}
 
 	result := 0
+	negativeNumbers := []string{}
 	for i := 0; i < len(numberArray); i++ {
 
-		i, err := strconv.Atoi(numberArray[i])
+		number, err := strconv.Atoi(numberArray[i])
 		if err != nil {
 			return 0, errors.New("not valid")
 
 		}
-		if i < 0 {
-			return 0, errors.New("negatives not allowed")
+
+		if i > 0 {
+			result += number
 		}
-		result += i
+
+		negativeNumbers = append(negativeNumbers, numberArray[i])
+
 	}
+
+	negativeNumberCount := len(negativeNumbers)
+	if negativeNumberCount == 1 {
+		return 0, errors.New("negatives not allowed")
+	}
+	if negativeNumberCount > 1 {
+		return 0, errors.New("negatives not allowed!!" + " negative numbers: (" + strings.Join(negativeNumbers, ",") + ")")
+	}
+
 	return result, nil
 }
