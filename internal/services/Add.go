@@ -38,6 +38,9 @@ func Add(numbers string) (int, error) {
 			return 0, errors.New("not valid")
 
 		}
+		if i < 0 {
+			return 0, errors.New("negatives not allowed")
+		}
 		result += i
 	}
 	return result, nil
