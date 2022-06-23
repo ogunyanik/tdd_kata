@@ -14,7 +14,7 @@ func Test_Add(t *testing.T) {
 	case4, _ := Add("//;\n1;2")
 	_, err5 := Add("-1,2")
 	_, err5_v2 := Add("-1,-2")
-	case6, _ := Add("1000,2")
+	case6, _ := Add("1001,2")
 
 	assert.Equal(t, 3, case1)
 	assert.Equal(t, 6, case2)
